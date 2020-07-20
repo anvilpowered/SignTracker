@@ -1,0 +1,107 @@
+plugins {
+    id 'io.codearte.nexus-staging' version '0.21.2'
+}
+
+ext.apiVersion = "0.2-SNAPSHOT"
+
+allprojects {
+    group = "org.anvilpowered"
+    version = "0.2.0-SNAPSHOT"
+    apply plugin: 'java-library'
+    apply plugin: 'maven-publish'
+    apply plugin: 'signing'
+}
+
+String _name = project.hasProperty("name") ? name : ""
+String _username = project.hasProperty("username") ? username : ""
+String _password = project.hasProperty("password") ? password : ""
+String _keyId = project.hasProperty("keyId") ? keyId : ""
+String _ringFile = project.hasProperty("ringFile") ? ringFile : ""
+
+subprojects {
+    sourceCompatibility = 1.8
+    repositories {
+        mavenCentral()
+        maven { url 'https://repo.spongepowered.org/maven' }
+        maven { url 'https://oss.sonatype.org/content/repositories/snapshots' }
+        maven { url 'https://jetbrains.bintray.com/xodus' }
+    }
+    dependencies {
+        api 'org.anvilpowered:anvil-api:0.2'
+    }
+    if (project.hasProperty("buildNumber") && version.contains("-SNAPSHOT")) {
+        version = version.replace("-SNAPSHOT", "-RC${buildNumber}")
+    }
+    nexusStaging {
+        packageGroup = 'org.anvilpowered'
+        username = _username
+        password = _password
+    }
+
+    if (project.hasProperty("sign")) {
+        ext.'signing.keyId' = _keyId
+        ext.'signing.password' = _password
+        ext.'signing.secretKeyRingFile' = _ringFile
+        signing {
+            sign publishing.publications
+            sign configurations.archives
+        }
+    }
+}
+
+
+project(':signtracker-api') {
+    java {
+        withJavadocJar()
+        withSourcesJar()
+    }
+    afterEvaluate {
+        publishing {
+            repositories {
+                maven {
+                    credentials {
+                        username _username
+                        password _password
+                    }
+                    def releasesRepoUrl = "https://oss.sonatype.org/service/local/staging/deploy/maven2/"
+                    def snapshotsRepoUrl = "https://oss.sonatype.org/content/repositories/snapshots"
+                    url version.endsWith("SNAPSHOT") ? snapshotsRepoUrl : releasesRepoUrl
+                }
+            }
+            publications {
+                mavenJava(MavenPublication) {
+                    from components.java
+
+                    pom {
+                        name = 'SignTracker'
+                        description = 'A minecraft plugin to track information on signs'
+                        url = 'https://github.com/AnvilPowered/SignTracker'
+
+                        scm {
+                            url = 'https://github.com/AnvilPowered/SignTracker'
+                            connection = 'scm:git:https://github.com/AnvilPowered/SignTracker.git'
+                            developerConnection = 'scm:git:https://github.com/AnvilPowered/SignTracker.git'
+                        }
+
+                        licenses {
+                            license {
+                                name = 'GNU LESSER GENERAL PUBLIC LICENSE Version 3'
+                                url = 'https://www.gnu.org/licenses/lgpl-3.0.html'
+                                distribution = 'repo'
+                            }
+                        }
+
+                        developers {
+                            developer {
+                                id = _username
+                                name = _name
+                                organization = 'AnvilPowered'
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+

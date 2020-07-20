@@ -1,0 +1,4 @@
+rootProject.name = 'SignTracker'
+include 'signtracker-api'
+include 'signtracker-sponge'
+include 'signtracker-common'
