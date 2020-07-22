@@ -17,7 +17,10 @@ import org.spongepowered.api.plugin.Plugin;
     id = SignTrackerPluginInfo.id,
     name = SignTrackerPluginInfo.name,
     version = SignTrackerPluginInfo.version,
-    dependencies = @Dependency(id = "anvil", version = "1.0.0-SNAPSHOT"),
+    dependencies = @Dependency(
+        id = "anvil",
+        version = "0.2"
+    ),
     description = SignTrackerPluginInfo.description,
     url = SignTrackerPluginInfo.url,
     authors = "Cableguy20"
