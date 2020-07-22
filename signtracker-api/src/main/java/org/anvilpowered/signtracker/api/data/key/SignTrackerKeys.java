@@ -16,7 +16,7 @@ public final class SignTrackerKeys {
         = new Key<Integer>("UPDATE_TASK_INTERVAL_SECONDS", 60) {
     };
     public static final Key<String> ADMIN_EDIT_PERMISSION
-        = new Key<String>("EDIT_SIGN_OTHER_PERMISSION", "signtracker.admin.edit") {
+        = new Key<String>("ADMIN_EDIT_PERMISSION", "signtracker.admin.edit") {
     };
 
     static {
