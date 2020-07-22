@@ -6,6 +6,7 @@ import com.google.inject.Module;
 import org.anvilpowered.anvil.api.Environment;
 import org.anvilpowered.anvil.api.data.registry.Registry;
 import org.anvilpowered.anvil.base.plugin.BasePlugin;
+import org.anvilpowered.signtracker.api.sign.SignManager;
 
 public class SignTracker extends BasePlugin {
 
@@ -22,5 +23,9 @@ public class SignTracker extends BasePlugin {
 
     public static Registry getRegistry() {
         return getEnvironment().getInjector().getInstance(Registry.class);
+    }
+
+    public static <TPlayer>SignManager<TPlayer> getSignManager() {
+        return getEnvironment().getInstance(SignManager.class.getCanonicalName());
     }
 }
