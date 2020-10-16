@@ -1,7 +1,7 @@
 package org.anvilpowered.signtracker.sponge.command;
 
 import com.google.inject.Inject;
-import org.anvilpowered.anvil.api.data.registry.Registry;
+import org.anvilpowered.anvil.api.registry.Registry;
 import org.anvilpowered.signtracker.common.command.CommonSignTrackerCommandNode;
 import org.spongepowered.api.Sponge;
 import org.spongepowered.api.command.CommandSource;

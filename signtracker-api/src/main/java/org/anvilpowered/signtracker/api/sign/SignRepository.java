@@ -1,4 +1,4 @@
-package org.anvilpowered.signtracker.api.sign.repository;
+package org.anvilpowered.signtracker.api.sign;
 
 import org.anvilpowered.anvil.api.datastore.Repository;
 import org.anvilpowered.signtracker.api.model.sign.Sign;

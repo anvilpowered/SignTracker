@@ -1,9 +1,8 @@
-package org.anvilpowered.signtracker.common.sign.repository;
+package org.anvilpowered.signtracker.common.sign;
 
-import org.anvilpowered.anvil.api.datastore.DataStoreContext;
 import org.anvilpowered.anvil.base.datastore.BaseRepository;
 import org.anvilpowered.signtracker.api.model.sign.Sign;
-import org.anvilpowered.signtracker.api.sign.repository.SignRepository;
+import org.anvilpowered.signtracker.api.sign.SignRepository;
 
 import java.util.List;
 import java.util.Optional;
@@ -13,10 +12,6 @@ import java.util.concurrent.CompletableFuture;
 public abstract class CommonSignRepository<TKey, TDataStore>
     extends BaseRepository<TKey, Sign<TKey>, TDataStore>
     implements SignRepository<TKey, TDataStore> {
-
-    protected CommonSignRepository(DataStoreContext<TKey, TDataStore> dataStoreContext) {
-        super(dataStoreContext);
-    }
 
     @Override
     @SuppressWarnings("unchecked")

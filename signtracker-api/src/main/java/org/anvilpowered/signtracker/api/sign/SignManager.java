@@ -1,7 +1,6 @@
 package org.anvilpowered.signtracker.api.sign;
 
 import org.anvilpowered.anvil.api.datastore.Manager;
-import org.anvilpowered.signtracker.api.sign.repository.SignRepository;
 
 import java.util.List;
 import java.util.UUID;

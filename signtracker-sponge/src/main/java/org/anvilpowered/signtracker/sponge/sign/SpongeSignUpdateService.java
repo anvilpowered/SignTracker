@@ -1,7 +1,7 @@
 package org.anvilpowered.signtracker.sponge.sign;
 
 import com.google.inject.Inject;
-import org.anvilpowered.anvil.api.core.model.coremember.CoreMember;
+import org.anvilpowered.anvil.api.model.coremember.CoreMember;
 import org.anvilpowered.anvil.api.util.TimeFormatService;
 import org.anvilpowered.signtracker.api.model.sign.Sign;
 import org.anvilpowered.signtracker.api.sign.SignUpdateService;

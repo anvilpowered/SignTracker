@@ -2,8 +2,8 @@ package org.anvilpowered.signtracker.sponge.listener;
 
 import com.google.inject.Inject;
 import org.anvilpowered.anvil.api.Anvil;
-import org.anvilpowered.anvil.api.core.coremember.CoreMemberManager;
-import org.anvilpowered.anvil.api.core.model.coremember.CoreMember;
+import org.anvilpowered.anvil.api.coremember.CoreMemberManager;
+import org.anvilpowered.anvil.api.model.coremember.CoreMember;
 import org.anvilpowered.signtracker.api.sign.SignManager;
 import org.anvilpowered.signtracker.sponge.sign.SpongeSignUpdateService;
 import org.slf4j.Logger;

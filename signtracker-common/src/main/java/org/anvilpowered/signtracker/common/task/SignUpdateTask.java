@@ -2,9 +2,9 @@ package org.anvilpowered.signtracker.common.task;
 
 import com.google.inject.Inject;
 import org.anvilpowered.anvil.api.Anvil;
-import org.anvilpowered.anvil.api.core.coremember.CoreMemberManager;
-import org.anvilpowered.anvil.api.core.model.coremember.CoreMember;
-import org.anvilpowered.anvil.api.data.registry.Registry;
+import org.anvilpowered.anvil.api.coremember.CoreMemberManager;
+import org.anvilpowered.anvil.api.model.coremember.CoreMember;
+import org.anvilpowered.anvil.api.registry.Registry;
 import org.anvilpowered.signtracker.api.model.sign.Sign;
 import org.anvilpowered.signtracker.api.sign.SignManager;
 import org.anvilpowered.signtracker.api.sign.SignUpdateService;

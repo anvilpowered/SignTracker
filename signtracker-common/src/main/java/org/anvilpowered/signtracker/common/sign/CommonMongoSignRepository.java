@@ -1,10 +1,8 @@
-package org.anvilpowered.signtracker.common.sign.repository;
+package org.anvilpowered.signtracker.common.sign;
 
-import com.google.inject.Inject;
-import org.anvilpowered.anvil.api.datastore.DataStoreContext;
 import org.anvilpowered.anvil.base.datastore.BaseMongoRepository;
 import org.anvilpowered.signtracker.api.model.sign.Sign;
-import org.anvilpowered.signtracker.api.sign.repository.MongoSignRepository;
+import org.anvilpowered.signtracker.api.sign.MongoSignRepository;
 import org.bson.types.ObjectId;
 import org.mongodb.morphia.Datastore;
 import org.mongodb.morphia.query.Query;
@@ -18,12 +16,6 @@ public class CommonMongoSignRepository
     extends CommonSignRepository<ObjectId, Datastore>
     implements BaseMongoRepository<Sign<ObjectId>>,
     MongoSignRepository {
-
-    @Inject
-    public CommonMongoSignRepository(
-        DataStoreContext<ObjectId, Datastore> dataStoreContext) {
-        super(dataStoreContext);
-    }
 
     @Override
     public Query<Sign<ObjectId>> asQuery(UUID worldUUID, int x, int y, int z) {

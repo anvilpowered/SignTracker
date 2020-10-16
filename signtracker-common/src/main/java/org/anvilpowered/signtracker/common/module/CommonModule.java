@@ -6,21 +6,19 @@ import com.google.inject.name.Names;
 import jetbrains.exodus.entitystore.EntityId;
 import jetbrains.exodus.entitystore.PersistentEntityStore;
 import org.anvilpowered.anvil.api.Anvil;
-import org.anvilpowered.anvil.api.data.config.ConfigurationService;
-import org.anvilpowered.anvil.api.data.registry.Registry;
 import org.anvilpowered.anvil.api.misc.BindingExtensions;
 import org.anvilpowered.anvil.api.plugin.BasicPluginInfo;
 import org.anvilpowered.anvil.api.plugin.PluginInfo;
+import org.anvilpowered.anvil.api.registry.Registry;
 import org.anvilpowered.signtracker.api.plugin.PluginMessages;
 import org.anvilpowered.signtracker.api.sign.SignManager;
-import org.anvilpowered.signtracker.api.sign.repository.SignRepository;
-import org.anvilpowered.signtracker.common.data.config.CommonConfigurationService;
-import org.anvilpowered.signtracker.common.data.registry.CommonRegistry;
+import org.anvilpowered.signtracker.api.sign.SignRepository;
 import org.anvilpowered.signtracker.common.plugin.SignTrackerPluginInfo;
 import org.anvilpowered.signtracker.common.plugin.SignTrackerPluginMessages;
+import org.anvilpowered.signtracker.common.registry.CommonConfigurationService;
+import org.anvilpowered.signtracker.common.sign.CommonMongoSignRepository;
 import org.anvilpowered.signtracker.common.sign.CommonSignManager;
-import org.anvilpowered.signtracker.common.sign.repository.CommonMongoSignRepository;
-import org.anvilpowered.signtracker.common.sign.repository.CommonXodusSignRepository;
+import org.anvilpowered.signtracker.common.sign.CommonXodusSignRepository;
 import org.bson.types.ObjectId;
 import org.mongodb.morphia.Datastore;
 
@@ -74,8 +72,6 @@ public class CommonModule<TUser, TPlayer, TString, TCommandSource> extends Abstr
         be.withMongoDB();
         be.withXodus();
 
-        bind(Registry.class).to(CommonRegistry.class);
-
-        bind(ConfigurationService.class).to(CommonConfigurationService.class);
+        bind(Registry.class).to(CommonConfigurationService.class);
     }
 }

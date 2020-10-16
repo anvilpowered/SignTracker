@@ -1,8 +1,8 @@
 package org.anvilpowered.signtracker.sponge.task;
 
 import com.google.inject.Inject;
-import org.anvilpowered.anvil.api.data.registry.Registry;
-import org.anvilpowered.signtracker.api.data.key.SignTrackerKeys;
+import org.anvilpowered.anvil.api.registry.Registry;
+import org.anvilpowered.signtracker.api.registry.SignTrackerKeys;
 import org.anvilpowered.signtracker.common.task.SignUpdateTask;
 import org.jetbrains.annotations.Nullable;
 import org.spongepowered.api.entity.living.player.Player;

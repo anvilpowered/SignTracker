@@ -1,4 +1,4 @@
-package org.anvilpowered.signtracker.api.sign.repository;
+package org.anvilpowered.signtracker.api.sign;
 
 import jetbrains.exodus.entitystore.Entity;
 import jetbrains.exodus.entitystore.EntityId;

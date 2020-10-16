@@ -1,14 +1,12 @@
-package org.anvilpowered.signtracker.common.sign.repository;
+package org.anvilpowered.signtracker.common.sign;
 
-import com.google.inject.Inject;
 import jetbrains.exodus.entitystore.Entity;
 import jetbrains.exodus.entitystore.EntityId;
 import jetbrains.exodus.entitystore.PersistentEntityStore;
 import jetbrains.exodus.entitystore.StoreTransaction;
-import org.anvilpowered.anvil.api.datastore.DataStoreContext;
 import org.anvilpowered.anvil.base.datastore.BaseXodusRepository;
 import org.anvilpowered.signtracker.api.model.sign.Sign;
-import org.anvilpowered.signtracker.api.sign.repository.XodusSignRepository;
+import org.anvilpowered.signtracker.api.sign.XodusSignRepository;
 
 import java.util.List;
 import java.util.Optional;
@@ -20,12 +18,6 @@ public class CommonXodusSignRepository
     extends CommonSignRepository<EntityId, PersistentEntityStore>
     implements BaseXodusRepository<Sign<EntityId>>,
     XodusSignRepository {
-
-    @Inject
-    public CommonXodusSignRepository(
-        DataStoreContext<EntityId, PersistentEntityStore> dataStoreContext) {
-        super(dataStoreContext);
-    }
 
     @Override
     public Function<? super StoreTransaction, ? extends Iterable<Entity>> asQuery(
