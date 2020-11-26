@@ -1,10 +1,10 @@
 package org.anvilpowered.signtracker.api.sign;
 
+import dev.morphia.Datastore;
+import dev.morphia.query.Query;
 import org.anvilpowered.anvil.api.datastore.MongoRepository;
 import org.anvilpowered.signtracker.api.model.sign.Sign;
 import org.bson.types.ObjectId;
-import org.mongodb.morphia.Datastore;
-import org.mongodb.morphia.query.Query;
 
 import java.util.UUID;
 

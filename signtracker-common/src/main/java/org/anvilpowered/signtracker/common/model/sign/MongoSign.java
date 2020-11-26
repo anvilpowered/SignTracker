@@ -1,9 +1,9 @@
 package org.anvilpowered.signtracker.common.model.sign;
 
+import dev.morphia.annotations.Entity;
 import org.anvilpowered.anvil.base.model.MongoDbo;
 import org.anvilpowered.signtracker.api.model.sign.Sign;
 import org.bson.types.ObjectId;
-import org.mongodb.morphia.annotations.Entity;
 
 import java.time.Instant;
 import java.util.List;

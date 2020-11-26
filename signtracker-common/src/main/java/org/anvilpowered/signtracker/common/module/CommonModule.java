@@ -3,6 +3,7 @@ package org.anvilpowered.signtracker.common.module;
 import com.google.common.reflect.TypeToken;
 import com.google.inject.AbstractModule;
 import com.google.inject.name.Names;
+import dev.morphia.Datastore;
 import jetbrains.exodus.entitystore.EntityId;
 import jetbrains.exodus.entitystore.PersistentEntityStore;
 import org.anvilpowered.anvil.api.Anvil;
@@ -20,7 +21,6 @@ import org.anvilpowered.signtracker.common.sign.CommonMongoSignRepository;
 import org.anvilpowered.signtracker.common.sign.CommonSignManager;
 import org.anvilpowered.signtracker.common.sign.CommonXodusSignRepository;
 import org.bson.types.ObjectId;
-import org.mongodb.morphia.Datastore;
 
 @SuppressWarnings("UnstableApiUsage")
 public class CommonModule<TUser, TPlayer, TString, TCommandSource> extends AbstractModule {
